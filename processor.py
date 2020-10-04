@@ -1,8 +1,13 @@
+import os
+
 import requests
+from dotenv import load_dotenv
+
 
 class Processor:
-    BASE_URL = 'https://pokeapi.co/api/v2/pokemon/abra' #url aleatória por enquanto
+    load_dotenv()
+    BASE_URL = os.environ['BASE_URL'] #url aleatória por enquanto
 
     def lista_instancias(self):
-        requests.get(self.BASE_URL)
-        return [] 
+        response = requests.get(self.BASE_URL + '/instances')
+        return response.json()
