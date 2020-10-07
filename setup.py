@@ -10,7 +10,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        infra-cli=main:cli
+        infra-cli=src.main:cli
     ''',
     author='vilelf'
 )
